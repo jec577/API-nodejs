@@ -1,0 +1,32 @@
+## Banco de Dados
+- **Tipo:** PostgreSQL, Local
+
+
+### Variáveis de Ambiente
+
+DB_HOST: Endereço do host do banco de dados PostgreSQL.
+DB_PORT: Porta de conexão do banco de dados 
+DB_USER: Nome de usuário para acessar o banco de dados.
+DB_PASS: Senha do banco de dados.
+DB_NAME: Nome do banco de dados.
+JWT_KEY: Chave usada para assinar e verificar os tokens JWT.
+PORT: Porta em que a aplicação será executada 
+
+## Rotas
+
+| Método | Rota                     | Descrição                               | Tipo     | Dados Enviados                                          |
+|--------|--------------------------|-----------------------------------------|----------|---------------------------------------------------------|
+| POST   | `/user`                  | Cria um novo usuário.                   | Pública  | username, email, occupation, password                   |
+| POST   | `/user/login`            | Faz login.                              | Pública  | email, password                                         |
+| PATCH  | `/user/`                 | Atualiza os dados do usuário.           | Privada  | username, email, occupation, **Token no cabeçalho**     |
+| GET    | `/user/profile`          | Obtém os dados do usuário autenticado.  | Privada  |  **Token no cabeçalho**                                 |
+
+
+## Comandos
+
+| Comando               | Descrição                                                                                       |
+|-----------------------|-------------------------------------------------------------------------------------------------|
+| `dev`                 | Inicia o servidor em modo de desenvolvimento                                                    |
+| `migration:generate`  | Gera uma nova migração com base nas alterações feitas no modelo de dados                        |
+| `migration:run`       | Executa as migrações no banco de dados, atualizando a estrutura com as novas mudanças.          |
+
