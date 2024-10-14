@@ -5,8 +5,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon --exec ts-node ./src/index.ts",
-    "migration:generate": "typeorm-ts-node-commonjs -d ./src/database/dataSource.ts migration:generate ./src/migrations/default",
-    "migration:run": "typeorm-ts-node-commonjs -d ./src/database/dataSource.ts migration:run"
+    "migration:generate": "typeorm-ts-node-commonjs -d ./src/config/database.ts migration:generate ./src/migrations/default",
+    "migration:run": "typeorm-ts-node-commonjs -d ./src/config/database.ts migration:run"
   },
   "dependencies": {
     "bcrypt": "^5.1.1",
